@@ -1,0 +1,20 @@
+<div class="product-details-container">
+  <div class="product-details">
+    <div class="product-image">
+      <img
+        *ngIf="product"
+        src="assets/img/{{ product.img }}"
+        alt="{{ product.name }} Image"
+      />
+    </div>
+    <div *ngIf="product" class="product-info">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-price">Price: ${{ product.price }}</p>
+      <button mat-raised-button color="primary" (click)="addToCart(product)">
+        <mat-icon>shopping_cart</mat-icon>
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

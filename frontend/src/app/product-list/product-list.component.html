@@ -1,0 +1,22 @@
+<div class="product-list">
+  <div class="product-card" *ngFor="let product of products">
+    <ng-container *ngIf="product.id">
+      <a [routerLink]="['/product', product.id]" class="product-link">
+        <div class="product-image">
+          <img
+            src="/assets/img/{{ product.img }}"
+            alt="{{ product.name }} Image"
+          />
+        </div>
+        <div class="product-details">
+          <h3 class="product-name">{{ product.name }}</h3>
+          <p class="product-description">{{ product.description }}</p>
+          <p class="product-price">Price: ${{ product.price }}</p>
+          <div class="product-rating">
+            <span class="rating-stars">Rating: {{ product.rating }}/5</span>
+          </div>
+        </div>
+      </a>
+    </ng-container>
+  </div>
+</div>
